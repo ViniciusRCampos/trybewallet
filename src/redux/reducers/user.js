@@ -12,7 +12,7 @@ const user = (state = INITIAL_STATE, action) => {
   case GET_USER:
     return {
       ...state,
-      email: user.email,
+      user: { email: action.email },
     };
   default:
     return state;
