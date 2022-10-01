@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 class Header extends Component {
   render() {
-    const { user: { email } } = this.props;
+    const { email } = this.props;
     return (
       <section>
         <h2 data-testid="email-field">
