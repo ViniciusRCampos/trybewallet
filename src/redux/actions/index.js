@@ -5,6 +5,7 @@ export const GET_USER = 'GET_USER';
 export const REQUEST_CURRENCY = 'REQUEST_CURRENCY';
 export const RECEIVE_CURRENCY_SUCCESS = 'RECEIVE_CURRENCY_SUCCESS';
 export const RECEIVE_CURRENCY_FAILURE = 'RECEIVE_CURRENCY_FAILURE';
+export const NEW_EXPENSE = 'NEW_EXPENSE';
 
 export const login = (email) => ({ type: GET_USER, email });
 
@@ -18,6 +19,10 @@ export const receiveAPISuccess = (currencies) => ({
 
 export const receiveAPIFailure = (error) => ({
   type: RECEIVE_CURRENCY_FAILURE, error,
+});
+
+export const addExpense = (expenses) => ({
+  type: NEW_EXPENSE, expenses,
 });
 
 export function fetchCurrencyAPI() {
