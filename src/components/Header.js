@@ -19,7 +19,7 @@ class Header extends Component {
         <h2>
           {'Despesas: '}
           <span data-testid="total-field">
-            { sumExpenses }
+            { parseFloat(sumExpenses).toFixed(2) }
           </span>
           <span data-testid="header-currency-field">
             {' BRL'}

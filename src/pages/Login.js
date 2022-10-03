@@ -37,7 +37,6 @@ class Login extends React.Component {
 
   render() {
     const { email, password, btnDisabled } = this.state;
-    console.log(this.state);
     return (
       <section>
         <div>Login - TRYBEWALLET</div>

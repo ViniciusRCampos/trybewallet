@@ -2,7 +2,8 @@
 import { RECEIVE_CURRENCY_SUCCESS,
   RECEIVE_CURRENCY_FAILURE,
   REQUEST_CURRENCY,
-  NEW_EXPENSE } from '../actions';
+  NEW_EXPENSE,
+  REMOVE_EXPENSE } from '../actions';
 
 const INITIAL_STATE = {
   currencies: [],
@@ -26,6 +27,10 @@ const wallet = (state = INITIAL_STATE, { type, currencies, error, expenses }) =>
   case NEW_EXPENSE:
     return { ...state,
       expenses: [...state.expenses, expenses] };
+  case REMOVE_EXPENSE:
+    return { ...state,
+      expenses: [...expenses],
+    };
 
   default: return state;
   }
