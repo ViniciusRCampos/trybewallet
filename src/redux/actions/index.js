@@ -7,6 +7,8 @@ export const RECEIVE_CURRENCY_SUCCESS = 'RECEIVE_CURRENCY_SUCCESS';
 export const RECEIVE_CURRENCY_FAILURE = 'RECEIVE_CURRENCY_FAILURE';
 export const NEW_EXPENSE = 'NEW_EXPENSE';
 export const REMOVE_EXPENSE = 'REMOVE_EXPENSE';
+export const EDIT_EXPENSE = 'EDIT_EXPENSE';
+export const SAVE_EXPENSE = 'SAVE_EXPENSE';
 
 export const login = (email) => ({ type: GET_USER, email });
 
@@ -30,6 +32,14 @@ export const removeExpense = (expenses) => ({
   type: REMOVE_EXPENSE, expenses,
 });
 
+export const editExpense = (id) => ({
+  type: EDIT_EXPENSE, id,
+});
+
+export const saveExpense = (expense) => ({
+  type: SAVE_EXPENSE, expense,
+});
+
 export function fetchCurrencyAPI() {
   return async (dispatch) => {
     dispatch(requestAPI());
@@ -42,4 +52,3 @@ export function fetchCurrencyAPI() {
     }
   };
 }
-

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { addExpense, fetchCurrencyAPI } from '../redux/actions';
+import { addExpense, fetchCurrencyAPI, saveExpense } from '../redux/actions';
 import currencyAPI from '../helpers/currencyAPI';
 
 class WalletForm extends Component {
@@ -26,10 +26,24 @@ class WalletForm extends Component {
   };
 
   dispatchAction = () => {
-    const { dispatch } = this.props;
-    const { id } = this.state;
-    dispatch(addExpense(this.state));
-    this.setState({ id: id + 1, value: '', description: '' });
+    const { dispatch, edit } = this.props;
+    const { id, value, description, method, currency, tag, exchangeRates } = this.state;
+    if (!edit) {
+      dispatch(addExpense(this.state));
+      this.setState({ id: id + 1, value: '', description: '' });
+    }
+    if (edit) {
+      const expenseToEdit = {
+        value,
+        description,
+        method,
+        currency,
+        tag,
+        exchangeRates,
+      };
+      dispatch(saveExpense(expenseToEdit));
+      this.setState({ id, value: '', description: '' });
+    }
   };
 
   handleClick = async () => {
@@ -38,7 +52,7 @@ class WalletForm extends Component {
   };
 
   render() {
-    const { currencies } = this.props;
+    const { currencies, edit } = this.props;
     const { value, description, method, tag, currency } = this.state;
 
     return (
@@ -123,7 +137,7 @@ class WalletForm extends Component {
           id="add_expense"
           onClick={ this.handleClick }
         >
-          Adicionar despesa
+          { edit ? 'Editar despesa' : 'Adicionar despesa'}
         </button>
       </section>
     );
