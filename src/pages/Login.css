@@ -1,0 +1,55 @@
+.login {
+  align-items: center;
+  background-color: lightseagreen;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+
+}
+
+.login_title {
+  align-items: center;
+  font-size: 35px;
+  justify-content: center;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.logo {
+  margin-right: 10px;
+  max-width: 25px;
+}
+
+form {
+  margin: 5px;
+}
+
+.login_form {
+  background-color: powderblue;
+  border: 1px solid black;
+  height: 175px;
+  text-align: center;
+
+}
+
+.input {
+  margin: 10px;
+  padding: 5px;
+  text-align: center;
+  width: 80%;
+}
+
+.login_btn {
+  align-self: center;
+  text-align: center;
+  width: 50px;
+}
+
+@media screen and ( max-width : 300px ) {
+
+  .login_form {
+    width: 95%;
+  }
+
+}

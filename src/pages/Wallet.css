@@ -1,0 +1,32 @@
+body {
+  background-color: lightseagreen;
+}
+
+.wallet {
+  background-color: lightseagreen;
+}
+
+.project_title {
+  align-items: center;
+  font-size: 35px;
+  justify-content: center;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.signature {
+  display: none;
+}
+
+.footer_icon {
+  margin: 5px;
+}
+
+.footer {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  text-align: center;
+
+}

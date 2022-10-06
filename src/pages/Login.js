@@ -1,7 +1,9 @@
+import './Login.css';
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { login } from '../redux/actions';
+import logo from '../imagens/logowallet.png';
 
 class Login extends React.Component {
   state = {
@@ -38,39 +40,47 @@ class Login extends React.Component {
   render() {
     const { email, password, btnDisabled } = this.state;
     return (
-      <section>
-        <div>Login - TRYBEWALLET</div>
-        <form htmlFor="email">
-          Login:
-          <input
-            type="email"
-            data-testid="email-input"
-            name="email"
-            id="email"
-            placeholder="email@email.com"
-            value={ email }
-            onChange={ this.handleChange }
-          />
-        </form>
-        <form htmlFor="password">
-          Password:
-          <input
-            data-testid="password-input"
-            type="password"
-            name="password"
-            id="password"
-            placeholder="Password"
-            value={ password }
-            onChange={ this.handleChange }
-          />
-        </form>
-        <button
-          type="submit"
-          onClick={ this.handleClick }
-          disabled={ btnDisabled }
-        >
-          Entrar
-        </button>
+      <section className="login">
+        <div className="login_title">
+          <img className="logo" src={ logo } alt="wallet" />
+          TrybeWallet
+        </div>
+        <section className="login_form">
+          <form htmlFor="email">
+            Login:
+            <input
+              className="input"
+              type="email"
+              data-testid="email-input"
+              name="email"
+              id="email"
+              placeholder="email@email.com"
+              value={ email }
+              onChange={ this.handleChange }
+            />
+          </form>
+          <form htmlFor="password">
+            Password:
+            <input
+              className="input"
+              data-testid="password-input"
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Password"
+              value={ password }
+              onChange={ this.handleChange }
+            />
+          </form>
+          <button
+            className="login_btn"
+            type="submit"
+            onClick={ this.handleClick }
+            disabled={ btnDisabled }
+          >
+            Entrar
+          </button>
+        </section>
       </section>
     );
   }

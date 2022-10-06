@@ -1,6 +1,8 @@
+import './Header.css';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { FaUserCircle, FaCoins } from 'react-icons/fa';
 
 class Header extends Component {
   render() {
@@ -12,19 +14,28 @@ class Header extends Component {
       return total;
     }, 0);
     return (
-      <section>
-        <h2 data-testid="email-field">
-          { email }
-        </h2>
-        <h2>
-          {'Despesas: '}
-          <span data-testid="total-field">
-            { parseFloat(sumExpenses).toFixed(2) }
-          </span>
-          <span data-testid="header-currency-field">
-            {' BRL'}
-          </span>
-        </h2>
+      <section className="header">
+        <div className="user">
+          <h2 data-testid="email-field" className="email">
+            <FaUserCircle size="25px" className="email_icon" />
+            {' '}
+            {`${email}`}
+          </h2>
+        </div>
+        <div className="expenses">
+          <h2>
+            <FaCoins className="expenses_icon" size="25px" />
+            {/* {'Despesas: '} */}
+            <span data-testid="total-field">
+              R$
+              {' '}
+              { parseFloat(sumExpenses).toFixed(2) }
+            </span>
+            <span data-testid="header-currency-field" className="hidden">
+              {' BRL'}
+            </span>
+          </h2>
+        </div>
 
       </section>
     );

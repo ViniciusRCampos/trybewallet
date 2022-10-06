@@ -38,7 +38,9 @@ const wallet = (state = INITIAL_STATE, { type, currencies, error,
     };
   case EDIT_EXPENSE:
     return {
-      ...state, edit: true, currentId: id,
+      ...state,
+      edit: true,
+      currentId: id,
     };
 
   case SAVE_EXPENSE:

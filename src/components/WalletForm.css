@@ -1,0 +1,34 @@
+.wallet_form {
+  align-items: center;
+  background-color: powderblue;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+}
+
+.add_btn {
+  margin-bottom: 5px;
+}
+
+.teste {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  text-align: center;
+  width: 200px;
+}
+
+.wallet_input {
+  display: inline-block;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  width: 100%;
+}
+
+
+@media screen and ( max-width : 500px ) {
+
+  .wallet_form {
+    background-color: powderblue;
+  }
+}

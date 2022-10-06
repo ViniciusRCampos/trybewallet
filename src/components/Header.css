@@ -1,0 +1,35 @@
+.header {
+  background-color: lightseagreen;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.hidden {
+  display: none;
+}
+
+.user {
+  display: flex;
+  flex-direction: row;
+}
+
+.email_icon {
+  margin-right: 5px;
+}
+
+.expenses {
+  display: flex;
+  flex-direction: row;
+}
+
+.expenses_icon {
+  margin-right: 10px;
+}
+
+@media screen and ( max-width : 500px ) {
+
+  .header {
+    flex-direction: column;
+  }
+}
