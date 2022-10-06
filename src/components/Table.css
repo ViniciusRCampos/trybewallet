@@ -13,11 +13,9 @@
 .btn {
   background-color: transparent;
   background-repeat: no-repeat;
-  border: none;
-  cursor: pointer;
   margin: 5px;
   outline: none;
-  overflow: hidden;
+  border: none;
 }
 
 .coin {

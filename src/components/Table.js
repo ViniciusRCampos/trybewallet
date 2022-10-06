@@ -7,10 +7,9 @@ import { editExpense, removeExpense } from '../redux/actions';
 import './Table.css';
 
 class Table extends Component {
-  deleteBtn = ({ target }) => {
+  deleteBtn = (id) => {
     const { expenses, dispatch } = this.props;
-    const { name } = target;
-    const deleteExpense = expenses.filter((e) => e.id !== Number(name));
+    const deleteExpense = expenses.filter((e) => e.id !== Number(id));
     dispatch(removeExpense(deleteExpense));
   };
 
@@ -74,7 +73,7 @@ class Table extends Component {
                     type="button"
                     className="btn"
                     data-testid="delete-btn"
-                    onClick={ this.deleteBtn }
+                    onClick={ () => this.deleteBtn(id) }
                     name={ id }
                   >
                     <MdDeleteForever size="20px" />
