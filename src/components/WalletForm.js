@@ -67,7 +67,7 @@ class WalletForm extends Component {
               <FaMoneyBillAlt size="25px" />
               <input
                 className="wallet_input"
-                type="text"
+                type="number"
                 id="value"
                 data-testid="value-input"
                 name="value"
